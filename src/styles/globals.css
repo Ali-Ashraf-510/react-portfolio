@@ -122,6 +122,7 @@
     --glass-shadow: 0 8px 32px rgba(15, 23, 42, 0.08);
     --glass-hover-shadow: 0 16px 40px rgba(15, 23, 42, 0.12);
 }
+
 /* src/styles/globals.css */
 
 /* Enhanced Navbar Styles */
@@ -421,6 +422,60 @@
   
   .main-navbar .nav-link.active {
     color: rgba(255, 255, 255, 0.95);
+  }
+}
+
+/* Light-theme overrides specifically for the navbar and pill */
+[data-theme="light"] .main-navbar {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(0, 0, 0, 0.06);
+  box-shadow:
+    0 8px 24px rgba(16, 24, 40, 0.06),
+    0 2px 8px rgba(16, 24, 40, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  color: var(--text-primary);
+}
+
+/* Ensure nav links are dark on light backgrounds */
+[data-theme="light"] .main-navbar .nav-link {
+  color: rgba(15, 23, 42, 0.72);
+}
+[data-theme="light"] .main-navbar .nav-link:hover,
+[data-theme="light"] .main-navbar .nav-link:focus {
+  color: rgba(15, 23, 42, 0.95);
+}
+
+/* Active link text should remain readable on the colored pill */
+[data-theme="light"] .main-navbar .nav-link.active {
+  color: var(--color-white);
+  font-weight: 600;
+  text-shadow: 0 1px 0 rgba(0,0,0,0.05);
+}
+
+/* Active pill gradient and softer glow on light backgrounds */
+[data-theme="light"] .main-navbar .active-pill {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  box-shadow:
+    0 6px 22px rgba(79, 70, 229, 0.12),
+    0 2px 8px rgba(79, 70, 229, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  animation: none; /* subtle: stop pulsing in light mode for legibility */
+}
+
+/* subtle glow for hovered links in light mode */
+[data-theme="light"] .main-navbar .nav-link-glow {
+  background: radial-gradient(circle at center, rgba(255,255,255,0.6) 0%, transparent 70%);
+  opacity: 0;
+}
+[data-theme="light"] .main-navbar .nav-link:hover .nav-link-glow {
+  opacity: 0.7;
+}
+
+/* Respect reduced motion still */
+@media (prefers-reduced-motion: reduce) {
+  [data-theme="light"] .main-navbar .active-pill {
+    transition: none;
+    animation: none;
   }
 }
 
