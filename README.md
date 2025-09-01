@@ -12,7 +12,7 @@ A dynamic, fully responsive personal portfolio built with React and Vite, showca
 
 ---
 
-## ## Features
+## Features
 
 * **Component-Based Architecture:** Built with reusable React functional components and hooks for maintainability.
 * **SPA Routing:** Uses React Router for a seamless, multi-page experience without page reloads.
@@ -23,7 +23,7 @@ A dynamic, fully responsive personal portfolio built with React and Vite, showca
 
 ---
 
-## ## Tech Stack
+## Tech Stack
 
 * **Framework:** [React](https://reactjs.org/)
 * **Build Tool:** [Vite](https://vitejs.dev/)
@@ -33,16 +33,16 @@ A dynamic, fully responsive personal portfolio built with React and Vite, showca
 
 ---
 
-## ## Getting Started
+## Getting Started
 
 To get a local copy up and running, follow these simple steps.
 
-### ### Prerequisites
+### Prerequisites
 
 Make sure you have Node.js and npm installed on your machine.
 * You can download them from [nodejs.org](https://nodejs.org/).
 
-### ### Installation
+### Installation
 
 1.  **Clone the repository:**
     ```bash
@@ -64,7 +64,7 @@ Make sure you have Node.js and npm installed on your machine.
 
 ---
 
-## ## Contact
+## Contact
 
 Ali Ashraf – [aliabofooda1234@gmail.com](mailto:aliabofooda1234@gmail.com)
 
