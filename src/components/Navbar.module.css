@@ -1,0 +1,221 @@
+/* src/components/Navbar.module.css */
+.mainNavbar {
+  position: fixed;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: var(--z-sticky);
+  padding: 0.4rem;
+  background: rgba(17, 24, 39, 0.7); /* لون أغمق قليلاً */
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 9999px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  animation: navbarSlideIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* حالة الـ Navbar بعد الـ scroll */
+.scrolled {
+  top: 1rem;
+  background: rgba(17, 24, 39, 0.85);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+}
+
+.navLinksWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0.2rem;
+}
+
+.activePill {
+  position: absolute;
+  top: 0.2rem;
+  bottom: 0.2rem;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  box-shadow: 0 4px 20px rgba(79, 70, 229, 0.4);
+  z-index: 1;
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); /* تأثير "springy" */
+}
+
+.navLink {
+  position: relative;
+  padding: 0.8rem 1.4rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 9999px;
+  z-index: 2;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.navLink:hover, .navLink:focus-visible {
+  color: var(--text-primary);
+  transform: translateY(-2px);
+}
+
+.navLink.active {
+  color: var(--color-white);
+  font-weight: 600;
+}
+
+/* تأثير التوهج عند الـ hover */
+.navLinkGlow {
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.navLink:hover .navLinkGlow {
+  opacity: 1;
+}
+
+/* --- Hamburger Menu for Mobile --- */
+.hamburger {
+  display: none; /* يظهر فقط في شاشات الموبايل */
+  position: relative;
+  width: 24px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.line {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--text-primary);
+  border-radius: 2px;
+  transition: all 0.3s ease-in-out;
+}
+
+.line:nth-child(1) { top: 4px; }
+.line:nth-child(2) { top: 11px; }
+.line:nth-child(3) { top: 18px; }
+
+.hamburger.open .line:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.hamburger.open .line:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open .line:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+
+/* --- Responsive Styles --- */
+@media (max-width: 768px) {
+  .mainNavbar {
+    top: 1rem;
+    left: 1rem;
+    right: 1rem;
+    width: auto;
+    transform: none;
+    padding: 0.5rem;
+    justify-content: space-between;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .navLinksWrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: all 0.4s ease;
+  }
+
+  .navLinksWrapper.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .activePill {
+    background: transparent;
+    box-shadow: none;
+    border: 2px solid var(--color-primary);
+  }
+
+  .navLink {
+    font-size: 1.5rem;
+  }
+}
+
+@keyframes navbarSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* Light-mode overrides that target the module classes */
+:global(body[data-theme="light"]) :local(.mainNavbar) {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 24px rgba(16,24,40,0.04);
+  color: var(--text-primary);
+  /* make border slightly stronger on light */
+  -webkit-backdrop-filter: blur(16px) saturate(130%);
+  backdrop-filter: blur(16px) saturate(130%);
+}
+
+:global(body[data-theme="light"]) :local(.navLink) {
+  color: rgba(15,23,42,0.78);
+}
+:global(body[data-theme="light"]) :local(.navLink):hover,
+:global(body[data-theme="light"]) :local(.navLink):focus-visible {
+  color: rgba(15,23,42,0.95);
+}
+
+/* Active pill styling on light background */
+:global(body[data-theme="light"]) :local(.activePill) {
+  background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary-dark));
+  box-shadow: 0 6px 18px rgba(79,70,229,0.08), inset 0 1px 0 rgba(255,255,255,0.6);
+  /* avoid pulsing for legibility on light backgrounds */
+  animation: none;
+}
+
+/* Ensure active link text is readable on the colored pill in light mode */
+:global(body[data-theme="light"]) :local(.navLink).active {
+  color: var(--color-white);
+  font-weight: 600;
+  text-shadow: 0 1px 0 rgba(0,0,0,0.04);
+}
+
+/* Hamburger line color for light mode */
+:global(body[data-theme="light"]) :local(.line) {
+  background-color: rgba(15,23,42,0.85);
+}
+

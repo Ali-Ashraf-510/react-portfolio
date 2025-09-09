@@ -1,73 +1,60 @@
-# Ali Ashraf - Machine Learning Engineer Portfolio
+# Ali Ashraf Portfolio
 
-![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
-![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
-![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
-
-A dynamic, fully responsive personal portfolio built with React and Vite, showcasing my projects, skills, and certifications as a Machine Learning & Deep Learning Engineer.
-
-
-
-**Visit the live demo:** [**portfolio-link.com**](https://your-live-demo-url.com)
-
----
+A modern, responsive portfolio for Ali Ashraf (Machine Learning & Deep Learning Engineer) built with React, Vite, and custom CSS.
 
 ## Features
-
-* **Component-Based Architecture:** Built with reusable React functional components and hooks for maintainability.
-* **SPA Routing:** Uses React Router for a seamless, multi-page experience without page reloads.
-* **Dynamic Content:** Project and certificate data are mapped from structured arrays, making content updates easy.
-* **Interactive UI:** Features an interactive modal for viewing certificate details and a smooth theme toggle (Light/Dark).
-* **Responsive Design:** Optimized for a great user experience on all devices, from mobile phones to desktops.
-* **Modern Styling:** A sleek, "glassmorphism" design created with pure CSS and custom properties.
-
----
-
-## Tech Stack
-
-* **Framework:** [React](https://reactjs.org/)
-* **Build Tool:** [Vite](https://vitejs.dev/)
-* **Routing:** [React Router](https://reactrouter.com/)
-* **Styling:** Pure CSS with Custom Properties
-* **Deployment:** [Your Hosting Service, e.g., Netlify, Vercel]
-
----
+- Animated, glassmorphic navigation bar with active pill
+- Light/Dark mode toggle
+- Responsive design (mobile-friendly)
+- Modal for certificates
+- Sections: Home, About, Projects, Certificates, Contact
+- Accessibility and keyboard navigation
+- Strict Content Security Policy (CSP) for security
 
 ## Getting Started
 
-To get a local copy up and running, follow these simple steps.
-
 ### Prerequisites
-
-Make sure you have Node.js and npm installed on your machine.
-* You can download them from [nodejs.org](https://nodejs.org/).
+- Node.js (v16+ recommended)
+- npm (v8+) or yarn
 
 ### Installation
+```bash
+npm install
+```
 
-1.  **Clone the repository:**
-    ```bash
-    git clone [https://github.com/YourUsername/your-repo-name.git](https://github.com/YourUsername/your-repo-name.git)
-    ```
-2.  **Navigate to the project directory:**
-    ```bash
-    cd your-repo-name
-    ```
-3.  **Install NPM packages:**
-    ```bash
-    npm install
-    ```
-4.  **Run the development server:**
-    ```bash
-    npm run dev
-    ```
-    The app will be available at `http://localhost:5173`.
+### Development
+```bash
+npm run dev
+```
+- Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+### Production Build
+```bash
+npm run build
+```
+- Output is in the `dist/` folder.
+
+### Preview Production Build
+```bash
+npm run preview
+```
+
+## Content Security Policy (CSP)
+- The app uses a strict CSP to prevent XSS and unsafe script/style loading.
+- All styles (Bootstrap, Font Awesome) are loaded via npm, not CDN.
+- If you need to allow additional external resources, update `public/_headers` (for Netlify) or your server config.
+
+## Customization
+- Edit content in `src/routes/` for each section.
+- Navbar and theme logic: `src/components/Navbar.jsx`, `src/App.jsx`
+- Global styles: `src/styles/globals.css`
+
+## Troubleshooting
+- If you see CSP errors in the browser console, ensure you are not loading CSS/JS from a CDN. Use local npm packages.
+- For local development, the Vite dev server sets a relaxed CSP for HMR and workers.
+
+## License
+MIT
 
 ---
-
-## Contact
-
-Ali Ashraf – [aliabofooda1234@gmail.com](mailto:aliabofooda1234@gmail.com)
-
-LinkedIn: [linkedin.com/in/ali-ashraf-8b619b22a](https://www.linkedin.com/in/ali-ashraf-8b619b22a)
-
-Project Link: [https://github.com/YourUsername/your-repo-name](https://github.com/YourUsername/your-repo-name)
+Crafted with ❤️ by Ali Ashraf
