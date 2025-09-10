@@ -229,31 +229,6 @@ body::after {
   transform: translateX(-50%) translateY(-1px);
 }
 
-/* Navigation links container */
-.nav-links-wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 0.2rem;
-  padding: 0.2rem;
-}
-
-/* Active pill indicator */
-.main-navbar .active-pill {
-  position: absolute;
-  top: 0.2rem;
-  bottom: 0.2rem;
-  border-radius: 40px;
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
-  box-shadow: 
-    0 4px 20px rgba(99, 102, 241, 0.4),
-    0 2px 10px rgba(99, 102, 241, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
-  z-index: 1;
-  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-  animation: pillGlow 2s ease-in-out infinite alternate;
-}
-
 /* Navigation links */
 .main-navbar .nav-link {
   position: relative;
@@ -314,157 +289,205 @@ body::after {
   outline-offset: 2px;
 }
 
-/* Light theme navbar overrides */
-[data-theme="light"] .main-navbar {
-  background: rgba(255, 255, 255, 0.95);
-  border-color: rgba(0, 0, 0, 0.06);
-  box-shadow:
-    0 8px 24px rgba(16, 24, 40, 0.06),
-    0 2px 8px rgba(16, 24, 40, 0.04),
-    inset 0 1px 0 rgba(255, 255, 255, 0.6);
-  color: var(--text-primary);
-}
-
-[data-theme="light"] .main-navbar .nav-link {
-  color: rgba(15, 23, 42, 0.72);
-}
-
-[data-theme="light"] .main-navbar .nav-link:hover,
-[data-theme="light"] .main-navbar .nav-link:focus {
-  color: rgba(15, 23, 42, 0.95);
-}
-
-[data-theme="light"] .main-navbar .nav-link.active {
-  color: var(--color-white);
-  font-weight: 600;
-  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
-}
-
-[data-theme="light"] .main-navbar .active-pill {
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
-  box-shadow:
-    0 6px 22px rgba(79, 70, 229, 0.12),
-    0 2px 8px rgba(79, 70, 229, 0.08),
-    inset 0 1px 0 rgba(255, 255, 255, 0.6);
-  animation: none;
-}
-
-[data-theme="light"] .main-navbar .nav-link-glow {
-  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.6) 0%, transparent 70%);
-}
-
-[data-theme="light"] .main-navbar .nav-link:hover .nav-link-glow {
-  opacity: 0.7;
-}
-
-/* NAV TOGGLE + MOBILE PANEL */
-.nav-toggle {
-  display: none;
-  background: transparent;
-  border: none;
-  width: 44px;
-  height: 44px;
-  padding: 6px;
-  border-radius: 8px;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  color: var(--text-primary);
-  z-index: 1100;
-  position: relative;
-}
-
-.hamburger,
-.hamburger::before,
-.hamburger::after {
-  display: block;
-  width: 22px;
-  height: 2px;
-  background: currentColor;
-  border-radius: 2px;
-  transition: transform 220ms ease, opacity 180ms ease;
-  position: relative;
-}
-
-.hamburger::before,
-.hamburger::after {
-  content: "";
+/* Active pill indicator */
+.main-navbar .active-pill {
   position: absolute;
-  left: 0;
+  top: 0.2rem;
+  bottom: 0.2rem;
+  border-radius: 40px;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  box-shadow: 
+    0 4px 20px rgba(99, 102, 241, 0.4),
+    0 2px 10px rgba(99, 102, 241, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  z-index: 1;
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  animation: pillGlow 2s ease-in-out infinite alternate;
 }
 
-.hamburger::before {
-  top: -7px;
+/* Navigation links container */
+.nav-links-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0.2rem;
 }
 
-.hamburger::after {
-  top: 7px;
-}
-
-.hamburger.open {
-  background: transparent;
-}
-.hamburger.open::before {
-  transform: translateY(7px) rotate(45deg);
-}
-.hamburger.open::after {
-  transform: translateY(-7px) rotate(-45deg);
-}
-
-/* Mobile nav-panel */
+/* Mobile Bottom Navigation */
 @media (max-width: 768px) {
-  .nav-toggle {
-    display: inline-flex;
+  .nav-links-wrapper {
+    display: none;
   }
-
-  .main-navbar {
-    top: 1rem;
+  
+  /* Bottom Navigation Bar */
+  .mobile-bottom-nav {
+    position: fixed;
+    bottom: 1rem;
     left: 1rem;
     right: 1rem;
-    width: auto;
-    transform: none;
-    padding: 0.3rem;
-  }
-
-  .nav-links-wrapper {
-    position: absolute;
-    top: calc(100% + 0.5rem);
-    right: 0.6rem;
-    left: auto;
     background: var(--glass-bg);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
     border: 1px solid var(--glass-border);
-    border-radius: 12px;
-    padding: 0.6rem;
-    flex-direction: column;
-    gap: 0.25rem;
-    box-shadow: var(--shadow-lg);
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    width: min(92%, 320px);
-    z-index: 1050;
-    transform-origin: top right;
+    border-radius: 20px;
+    padding: 0.75rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 
+      0 8px 32px rgba(0, 0, 0, 0.15),
+      0 2px 8px rgba(0, 0, 0, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    z-index: var(--z-fixed);
+    animation: slideUpIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
+  
+  .mobile-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.5rem;
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    font-weight: 500;
+    transition: all var(--transition-normal);
+    position: relative;
+    min-width: 50px;
+  }
+  
+  .mobile-nav-item i {
+    font-size: 1.25rem;
+    transition: all var(--transition-normal);
+  }
+  
+  .mobile-nav-item:hover,
+  .mobile-nav-item.active {
+    color: var(--color-primary);
+    background: rgba(79, 70, 229, 0.1);
+    transform: translateY(-2px);
+  }
+  
+  .mobile-nav-item.active {
+    color: var(--color-white);
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+    box-shadow: 
+      0 4px 15px rgba(79, 70, 229, 0.4),
+      0 2px 8px rgba(79, 70, 229, 0.3);
+  }
+  
+  .mobile-nav-item.active i {
+    transform: scale(1.1);
+  }
+  
+  /* Add padding to body on mobile to account for bottom nav */
+  body {
+    padding-bottom: 100px; /* Space for bottom navigation */
+  }
+  
+  /* Ripple effect on mobile nav items */
+  .mobile-nav-item {
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .mobile-nav-item::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(79, 70, 229, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease, height 0.3s ease;
+  }
+  
+  .mobile-nav-item:active::before {
+    width: 40px;
+    height: 40px;
+  }
+  
+  /* Notification dot for active state */
+  .mobile-nav-item.active::after {
+    content: '';
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 6px;
+    height: 6px;
+    background: var(--color-accent);
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px var(--color-white);
+    animation: pulse 2s infinite;
+  }
+  
+  [data-theme="light"] .mobile-nav-item.active::after {
+    box-shadow: 0 0 0 2px rgba(79, 70, 229, 1);
+  }
+}
 
-  .nav-links-wrapper.open {
-    max-height: 520px;
+@keyframes pulse {
+  0% {
+    transform: scale(1);
     opacity: 1;
   }
-
-  .nav-links-wrapper .nav-link {
-    display: block;
-    width: 100%;
-    padding: 0.7rem 0.9rem;
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
   }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
 
-  .nav-links-wrapper .active-pill {
-    top: 8px;
-    bottom: 8px;
-    left: 8px;
-    width: calc(100% - 16px);
-    transition: left 300ms ease, width 300ms ease, opacity 200ms ease;
+/* Hide mobile nav on desktop */
+@media (min-width: 769px) {
+  .mobile-bottom-nav {
+    display: none;
+  }
+}
+
+/* Light theme mobile navigation */
+@media (max-width: 768px) {
+  [data-theme="light"] .mobile-bottom-nav {
+    background: rgba(255, 255, 255, 0.95);
+    border-color: rgba(0, 0, 0, 0.08);
+    box-shadow:
+      0 8px 32px rgba(16, 24, 40, 0.12),
+      0 2px 8px rgba(16, 24, 40, 0.06),
+      inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  }
+  
+  [data-theme="light"] .mobile-nav-item {
+    color: rgba(15, 23, 42, 0.65);
+  }
+  
+  [data-theme="light"] .mobile-nav-item:hover {
+    color: var(--color-primary);
+    background: rgba(79, 70, 229, 0.08);
+  }
+  
+  [data-theme="light"] .mobile-nav-item.active {
+    color: var(--color-white);
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  }
+}
+
+/* Animation for slide up */
+@keyframes slideUpIn {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -1420,9 +1443,8 @@ body::after {
 .form-control:focus {
   outline: none;
   border-color: var(--color-primary);
-  background: rgba(79, 70, 229, 0.05);
-  transform: translateY(-1px);
-  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+  background: rgba(79, 70, 229, 0.04);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.12);
 }
 
 .form-control::placeholder {
@@ -1963,4 +1985,364 @@ body::after {
     .footer-links {
         gap: var(--space-3);
     }
+}
+
+/* ============================================
+   NAVBAR TOGGLE ENHANCEMENTS
+   ============================================ */
+
+@media (max-width: 768px) {
+  /* Smooth open/close animation */
+  .nav-links-wrapper {
+    transform: scaleY(0);
+    transform-origin: top right;
+    will-change: transform, opacity, max-height;
+    transition: transform var(--transition-normal), opacity var(--transition-normal), max-height var(--transition-normal);
+  }
+
+  .nav-links-wrapper.open {
+    transform: scaleY(1);
+  }
+
+  /* Enlarge navbar container when menu is open */
+  .main-navbar:has(.nav-links-wrapper.open) {
+    padding: 0.5rem;
+    border-radius: 18px;
+    box-shadow:
+      0 18px 50px rgba(0, 0, 0, 0.22),
+      0 6px 22px rgba(0, 0, 0, 0.12),
+      inset 0 1px 0 rgba(255, 255, 255, 0.28);
+    backdrop-filter: blur(18px) saturate(190%);
+    -webkit-backdrop-filter: blur(18px) saturate(190%);
+  }
+
+  /* Increase link size and spacing when open */
+  .main-navbar:has(.nav-links-wrapper.open) .nav-link {
+    font-size: 0.95rem;
+    padding: 0.85rem 1rem;
+    letter-spacing: 0.02em;
+  }
+
+  /* Ensure active pill is visible in open panel */
+  .main-navbar:has(.nav-links-wrapper.open) .active-pill {
+    opacity: 1;
+    box-shadow:
+      0 8px 24px rgba(99, 102, 241, 0.35),
+      0 3px 12px rgba(99, 102, 241, 0.25),
+      inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  }
+
+  /* Toggle button visual feedback */
+  .nav-toggle:has(.hamburger.open) {
+    background: rgba(79, 70, 229, 0.12);
+    border: 1px solid var(--color-primary);
+    box-shadow: 0 4px 14px rgba(79, 70, 229, 0.25);
+  }
+}
+
+/* Light theme adjustments for open state */
+@media (max-width: 768px) {
+  [data-theme="light"] .main-navbar:has(.nav-links-wrapper.open) {
+    background: rgba(255, 255, 255, 0.98);
+    border-color: rgba(0, 0, 0, 0.08);
+    box-shadow:
+      0 18px 40px rgba(16, 24, 40, 0.10),
+      0 6px 16px rgba(16, 24, 40, 0.06),
+      inset 0 1px 0 rgba(255, 255, 255, 0.65);
+  }
+
+  [data-theme="light"] .nav-toggle:has(.hamburger.open) {
+    background: rgba(79, 70, 229, 0.08);
+    border: 1px solid rgba(79, 70, 229, 0.35);
+    box-shadow: 0 4px 14px rgba(79, 70, 229, 0.25);
+  }
+}
+
+/* ============================================
+   NAVBAR TOGGLE REFINEMENTS
+   ============================================ */
+@media (max-width: 768px) {
+  /* Prevent background scroll when menu is open */
+  body:has(.nav-links-wrapper.open) {
+    overflow: hidden;
+  }
+
+  /* Refine the dropdown panel spacing and elevation */
+  .nav-links-wrapper.open {
+    padding: 0.8rem; /* increased from 0.6rem */
+    gap: 0.35rem;    /* increased spacing */
+    border-color: rgba(255, 255, 255, 0.22);
+    box-shadow:
+      0 16px 48px rgba(0, 0, 0, 0.22),
+      0 6px 20px rgba(0, 0, 0, 0.14);
+  }
+
+  /* Enlarge container and smooth the corners a bit more */
+  .main-navbar:has(.nav-links-wrapper.open) {
+    padding: 0.65rem; /* up from 0.5rem */
+    border-radius: 22px; /* up from 18px */
+  }
+
+  /* Bigger, more tappable links when open */
+  .main-navbar:has(.nav-links-wrapper.open) .nav-link {
+    font-size: 1rem;         /* up from 0.95rem */
+    padding: 0.95rem 1.1rem; /* up from 0.85rem 1rem */
+    letter-spacing: 0.015em;
+  }
+
+  /* Subtle feedback on the toggle button */
+  .nav-toggle:has(.hamburger.open) {
+    transform: scale(1.05);
+  }
+
+  /* Light theme tweaks */
+  [data-theme="light"] .nav-links-wrapper.open {
+    border-color: rgba(15, 23, 42, 0.12);
+    box-shadow:
+      0 16px 40px rgba(16, 24, 40, 0.12),
+      0 6px 16px rgba(16, 24, 40, 0.08);
+  }
+}
+
+/* ============================================
+   LIGHT MODE STYLE ENHANCEMENTS
+   ============================================ */
+
+/* Refined glass surfaces and cards */
+[data-theme="light"] .glass-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(16, 24, 40, 0.08);
+  box-shadow:
+    0 10px 30px rgba(16, 24, 40, 0.08),
+    0 1px 2px rgba(16, 24, 40, 0.04);
+}
+
+/* Navbar panel and links in light mode */
+[data-theme="light"] .nav-links-wrapper {
+  background: rgba(255, 255, 255, 0.98);
+  border-color: rgba(0, 0, 0, 0.06);
+  box-shadow:
+    0 12px 32px rgba(16, 24, 40, 0.10),
+    0 2px 8px rgba(16, 24, 40, 0.06);
+}
+
+[data-theme="light"] .nav-links-wrapper .nav-link {
+  color: rgba(15, 23, 42, 0.78);
+}
+
+[data-theme="light"] .nav-links-wrapper .nav-link:hover,
+[data-theme="light"] .nav-links-wrapper .nav-link:focus {
+  color: rgba(15, 23, 42, 0.95);
+  background: rgba(15, 23, 42, 0.04);
+}
+
+/* Buttons */
+[data-theme="light"] .btn-outline {
+  color: rgba(15, 23, 42, 0.9);
+  border-color: rgba(16, 24, 40, 0.12);
+}
+
+[data-theme="light"] .btn-outline:hover {
+  background: rgba(79, 70, 229, 0.06);
+  border-color: var(--color-primary);
+  color: rgba(15, 23, 42, 0.95);
+}
+
+[data-theme="light"] .btn-secondary {
+  background: #ffffff;
+  color: rgba(15, 23, 42, 0.8);
+  border-color: rgba(16, 24, 40, 0.1);
+}
+
+[data-theme="light"] .btn-secondary:hover {
+  background: var(--color-primary);
+  color: #ffffff;
+  border-color: var(--color-primary);
+}
+
+/* Panels and list items */
+[data-theme="light"] .stat-item,
+[data-theme="light"] .highlight-item,
+[data-theme="light"] .contact-item,
+[data-theme="light"] .social-link {
+  background: rgba(255, 255, 255, 0.78);
+  border-color: rgba(16, 24, 40, 0.08);
+}
+
+[data-theme="light"] .contact-item:hover,
+[data-theme="light"] .social-link:hover {
+  background: rgba(79, 70, 229, 0.06);
+}
+
+/* Tags */
+[data-theme="light"] .skill-tag,
+[data-theme="light"] .tech-tag {
+  background: rgba(79, 70, 229, 0.06);
+  color: var(--color-primary);
+  border-color: rgba(79, 70, 229, 0.2);
+}
+
+/* Forms */
+[data-theme="light"] .form-control {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(16, 24, 40, 0.1);
+}
+
+[data-theme="light"] .form-control:focus {
+  background: rgba(79, 70, 229, 0.04);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.12);
+}
+
+/* Background grid subtle darkening for light */
+[data-theme="light"] body::after {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+}
+
+/* Theme toggle polish */
+[data-theme="light"] .theme-toggle {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(0, 0, 0, 0.06);
+}
+
+/* Light theme toggle button */
+[data-theme="light"] .nav-toggle {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(0, 0, 0, 0.1);
+  color: rgba(15, 23, 42, 0.9);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .nav-toggle:hover {
+  background: rgba(79, 70, 229, 0.08);
+  border-color: var(--color-primary);
+  transform: translateY(-50%) scale(1.05);
+}
+
+/* ============================================
+   LIGHT MODE POLISH (refinements)
+   ============================================ */
+
+/* Softer animated background for light mode */
+[data-theme="light"] body::before {
+  background:
+    radial-gradient(circle at 20% 20%, rgba(79, 70, 229, 0.06) 0%, transparent 40%),
+    radial-gradient(circle at 80% 20%, rgba(6, 182, 212, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 20% 80%, rgba(16, 185, 129, 0.04) 0%, transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.05) 0%, transparent 40%);
+}
+
+/* Navbar in light mode: scrolled and hover states */
+[data-theme="light"] .main-navbar.scrolled {
+  background: rgba(255, 255, 255, 0.98);
+  border-color: rgba(0, 0, 0, 0.08);
+  box-shadow:
+    0 12px 32px rgba(16, 24, 40, 0.08),
+    0 4px 12px rgba(16, 24, 40, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+[data-theme="light"] .main-navbar:hover {
+  box-shadow:
+    0 14px 36px rgba(16, 24, 40, 0.10),
+    0 6px 16px rgba(16, 24, 40, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.65);
+}
+
+/* Gentler active pill glow in light mode */
+[data-theme="light"] .main-navbar .active-pill {
+  box-shadow:
+    0 8px 22px rgba(79, 70, 229, 0.18),
+    0 3px 10px rgba(79, 70, 229, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+/* Lighter hover states for panels and list items */
+[data-theme="light"] .stat-item:hover,
+[data-theme="light"] .highlight-item:hover,
+[data-theme="light"] .contact-item:hover,
+[data-theme="light"] .social-link:hover {
+  background: rgba(79, 70, 229, 0.06);
+  border-color: rgba(79, 70, 229, 0.22);
+}
+
+/* Mobile: brighter open navbar panel */
+@media (max-width: 768px) {
+  [data-theme="light"] .main-navbar:has(.nav-links-wrapper.open) {
+    background: rgba(255, 255, 255, 0.98);
+    border-color: rgba(0, 0, 0, 0.08);
+    box-shadow:
+      0 18px 40px rgba(16, 24, 40, 0.10),
+      0 6px 16px rgba(16, 24, 40, 0.06),
+      inset 0 1px 0 rgba(255, 255, 255, 0.65);
+  }
+
+  [data-theme="light"] .nav-toggle:has(.hamburger.open) {
+    background: rgba(79, 70, 229, 0.08);
+    border: 1px solid rgba(79, 70, 229, 0.35);
+    box-shadow: 0 4px 14px rgba(79, 70, 229, 0.25);
+  }
+}
+
+/* ============================================
+   MOBILE TOGGLE BUTTON FIXES
+   ============================================ */
+
+@media (max-width: 768px) {
+  /* Ensure toggle button is always visible and functional */
+  .nav-toggle {
+    display: flex !important;
+    z-index: 1200;
+  }
+  
+  /* Ensure hover state works on mobile */
+  .nav-toggle:hover {
+    transform: translateY(-50%) scale(1.05);
+  }
+  
+  /* Ensure nav links show when open */
+  .nav-links-wrapper.open {
+    display: flex !important;
+    visibility: visible;
+  }
+  
+  /* Debug: Make sure the button is clickable */
+  .nav-toggle,
+  .hamburger {
+    pointer-events: auto;
+    cursor: pointer;
+  }
+  
+  /* Ensure proper stacking order */
+  .main-navbar {
+    z-index: var(--z-sticky);
+  }
+  
+  .nav-toggle {
+    z-index: calc(var(--z-sticky) + 1);
+  }
+  
+  .nav-links-wrapper {
+    z-index: calc(var(--z-sticky) + 2);
+  }
+}
+
+/* Hide main navbar on mobile when using bottom nav */
+@media (max-width: 768px) {
+  .main-navbar {
+    display: none !important;
+  }
+}
+
+/* Show main navbar on desktop */
+@media (min-width: 769px) {
+  .main-navbar {
+    display: flex !important;
+  }
+  
+  /* Reset body padding on desktop */
+  body {
+    padding-bottom: 0 !important;
+  }
 }

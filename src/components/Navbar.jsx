@@ -88,49 +88,59 @@ const Navbar = () => {
   }, [isOpen]);
 
   return (
-    <nav className={`main-navbar ${isScrolled ? 'scrolled' : ''}`} ref={containerRef} role="navigation" aria-label="Main navigation">
-      <button
-        className="nav-toggle"
-        aria-controls="nav-links"
-        aria-expanded={isOpen}
-        aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
-        onClick={() => {
-          setIsOpen((v) => !v);
-          requestAnimationFrame(updatePill);
-        }}
-      >
-        <span className="sr-only">{isOpen ? 'Close menu' : 'Open menu'}</span>
-        <span className={`hamburger ${isOpen ? 'open' : ''}`} aria-hidden="true" />
-      </button>
-
-      <div id="nav-links" ref={wrapperRef} className={`nav-links-wrapper ${isOpen ? 'open' : 'collapsed'}`}>
-        <div
-          className="active-pill"
-          style={{
-            left: `${pill.left}px`,
-            width: `${pill.width}px`,
-            opacity: pill.opacity,
-          }}
-        />
-
-        {links.map(({ to, label }) => (
-          <NavLink
-            key={to}
-            to={to}
-            end={to === '/'}
-            className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}
-            ref={(el) => { if (el) linkRefs.current[label] = el; }}
-            onClick={() => {
-              setIsOpen(false);
-              requestAnimationFrame(updatePill);
+    <>
+      {/* Desktop Navigation */}
+      <nav className={`main-navbar ${isScrolled ? 'scrolled' : ''}`} ref={containerRef} role="navigation" aria-label="Main navigation">
+        <div id="nav-links" ref={wrapperRef} className="nav-links-wrapper">
+          <div
+            className="active-pill"
+            style={{
+              left: `${pill.left}px`,
+              width: `${pill.width}px`,
+              opacity: pill.opacity,
             }}
-          >
-            <span className="nav-link-text">{label}</span>
-            <div className="nav-link-glow" />
-          </NavLink>
-        ))}
-      </div>
-    </nav>
+          />
+
+          {links.map(({ to, label }) => (
+            <NavLink
+              key={to}
+              to={to}
+              end={to === '/'}
+              className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}
+              ref={(el) => { if (el) linkRefs.current[label] = el; }}
+            >
+              <span className="nav-link-text">{label}</span>
+              <div className="nav-link-glow" />
+            </NavLink>
+          ))}
+        </div>
+      </nav>
+
+      {/* Mobile Bottom Navigation */}
+      <nav className="mobile-bottom-nav" role="navigation" aria-label="Mobile navigation">
+        {links.map(({ to, label }) => {
+          const icons = {
+            'Home': 'fas fa-home',
+            'About': 'fas fa-user',
+            'Projects': 'fas fa-code',
+            'Certificates': 'fas fa-certificate',
+            'Contact': 'fas fa-envelope'
+          };
+          
+          return (
+            <NavLink
+              key={to}
+              to={to}
+              end={to === '/'}
+              className={({ isActive }) => `mobile-nav-item${isActive ? ' active' : ''}`}
+            >
+              <i className={icons[label]} aria-hidden="true"></i>
+              <span>{label}</span>
+            </NavLink>
+          );
+        })}
+      </nav>
+    </>
   );
 };
 
