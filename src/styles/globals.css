@@ -1796,41 +1796,29 @@ body::after {
    RESPONSIVE DESIGN
    ============================================ */
 
-/* Mobile navbar adjustments */
+/* Mobile: Hide main navbar, show bottom nav */
 @media (max-width: 768px) {
   .main-navbar {
-    top: 1rem;
-    left: 1rem;
-    right: 1rem;
-    width: auto;
-    transform: none;
-    padding: 0.3rem;
+    display: none !important;
   }
   
-  .main-navbar.scrolled {
-    transform: translateY(-2px);
-  }
-  
-  .main-navbar:hover {
-    transform: translateY(-1px);
-  }
-  
-  .main-navbar .nav-link {
-    padding: 0.7rem 1rem;
-    font-size: 0.8rem;
-  }
-  
-  .nav-links-wrapper {
-    gap: 0.1rem;
-    justify-content: space-between;
-    width: 100%;
+  body {
+    padding-bottom: 100px;
   }
 }
 
-@media (max-width: 480px) {
-  .main-navbar .nav-link {
-    padding: 0.6rem 0.8rem;
-    font-size: 0.75rem;
+/* Desktop: Show main navbar, hide bottom nav */
+@media (min-width: 769px) {
+  .main-navbar {
+    display: flex !important;
+  }
+  
+  .mobile-bottom-nav {
+    display: none;
+  }
+  
+  body {
+    padding-bottom: 0 !important;
   }
 }
 
@@ -1935,414 +1923,59 @@ body::after {
 }
 
 @media (max-width: 575.98px) {
-    .hero-section {
-        padding: var(--space-16) 0;
-    }
-    
-    .about-card,
-    .contact-form-card,
-    .contact-info-card {
-        padding: var(--space-6);
-    }
-    
-    .skill-card,
-    .certificate-card {
-        padding: var(--space-5);
-    }
-    
-    .project-content {
-        padding: var(--space-5);
-    }
-
-    .profile-image {
-        width: 100px;
-        height: 100px;
-    }
-
-    .section-header {
-        margin-bottom: var(--space-8);
-    }
-
-    .section-title {
-        font-size: clamp(var(--text-xl), 8vw, var(--text-3xl));
-    }
-
-    .modal-header,
-    .modal-image-container,
-    .modal-body {
-        padding: var(--space-2);
-    }
-
-    .modal-image {
-        max-height: 30vh;
-    }
-
-    .footer {
-        padding: var(--space-5) 0;
-        margin-top: var(--space-12);
-    }
-
-    .footer-links {
-        gap: var(--space-3);
-    }
-}
-
-/* ============================================
-   NAVBAR TOGGLE ENHANCEMENTS
-   ============================================ */
-
-@media (max-width: 768px) {
-  /* Smooth open/close animation */
-  .nav-links-wrapper {
-    transform: scaleY(0);
-    transform-origin: top right;
-    will-change: transform, opacity, max-height;
-    transition: transform var(--transition-normal), opacity var(--transition-normal), max-height var(--transition-normal);
-  }
-
-  .nav-links-wrapper.open {
-    transform: scaleY(1);
-  }
-
-  /* Enlarge navbar container when menu is open */
-  .main-navbar:has(.nav-links-wrapper.open) {
-    padding: 0.5rem;
-    border-radius: 18px;
-    box-shadow:
-      0 18px 50px rgba(0, 0, 0, 0.22),
-      0 6px 22px rgba(0, 0, 0, 0.12),
-      inset 0 1px 0 rgba(255, 255, 255, 0.28);
-    backdrop-filter: blur(18px) saturate(190%);
-    -webkit-backdrop-filter: blur(18px) saturate(190%);
-  }
-
-  /* Increase link size and spacing when open */
-  .main-navbar:has(.nav-links-wrapper.open) .nav-link {
-    font-size: 0.95rem;
-    padding: 0.85rem 1rem;
-    letter-spacing: 0.02em;
-  }
-
-  /* Ensure active pill is visible in open panel */
-  .main-navbar:has(.nav-links-wrapper.open) .active-pill {
-    opacity: 1;
-    box-shadow:
-      0 8px 24px rgba(99, 102, 241, 0.35),
-      0 3px 12px rgba(99, 102, 241, 0.25),
-      inset 0 1px 0 rgba(255, 255, 255, 0.25);
-  }
-
-  /* Toggle button visual feedback */
-  .nav-toggle:has(.hamburger.open) {
-    background: rgba(79, 70, 229, 0.12);
-    border: 1px solid var(--color-primary);
-    box-shadow: 0 4px 14px rgba(79, 70, 229, 0.25);
-  }
-}
-
-/* Light theme adjustments for open state */
-@media (max-width: 768px) {
-  [data-theme="light"] .main-navbar:has(.nav-links-wrapper.open) {
-    background: rgba(255, 255, 255, 0.98);
-    border-color: rgba(0, 0, 0, 0.08);
-    box-shadow:
-      0 18px 40px rgba(16, 24, 40, 0.10),
-      0 6px 16px rgba(16, 24, 40, 0.06),
-      inset 0 1px 0 rgba(255, 255, 255, 0.65);
-  }
-
-  [data-theme="light"] .nav-toggle:has(.hamburger.open) {
-    background: rgba(79, 70, 229, 0.08);
-    border: 1px solid rgba(79, 70, 229, 0.35);
-    box-shadow: 0 4px 14px rgba(79, 70, 229, 0.25);
-  }
-}
-
-/* ============================================
-   NAVBAR TOGGLE REFINEMENTS
-   ============================================ */
-@media (max-width: 768px) {
-  /* Prevent background scroll when menu is open */
-  body:has(.nav-links-wrapper.open) {
-    overflow: hidden;
-  }
-
-  /* Refine the dropdown panel spacing and elevation */
-  .nav-links-wrapper.open {
-    padding: 0.8rem; /* increased from 0.6rem */
-    gap: 0.35rem;    /* increased spacing */
-    border-color: rgba(255, 255, 255, 0.22);
-    box-shadow:
-      0 16px 48px rgba(0, 0, 0, 0.22),
-      0 6px 20px rgba(0, 0, 0, 0.14);
-  }
-
-  /* Enlarge container and smooth the corners a bit more */
-  .main-navbar:has(.nav-links-wrapper.open) {
-    padding: 0.65rem; /* up from 0.5rem */
-    border-radius: 22px; /* up from 18px */
-  }
-
-  /* Bigger, more tappable links when open */
-  .main-navbar:has(.nav-links-wrapper.open) .nav-link {
-    font-size: 1rem;         /* up from 0.95rem */
-    padding: 0.95rem 1.1rem; /* up from 0.85rem 1rem */
-    letter-spacing: 0.015em;
-  }
-
-  /* Subtle feedback on the toggle button */
-  .nav-toggle:has(.hamburger.open) {
-    transform: scale(1.05);
-  }
-
-  /* Light theme tweaks */
-  [data-theme="light"] .nav-links-wrapper.open {
-    border-color: rgba(15, 23, 42, 0.12);
-    box-shadow:
-      0 16px 40px rgba(16, 24, 40, 0.12),
-      0 6px 16px rgba(16, 24, 40, 0.08);
-  }
-}
-
-/* ============================================
-   LIGHT MODE STYLE ENHANCEMENTS
-   ============================================ */
-
-/* Refined glass surfaces and cards */
-[data-theme="light"] .glass-card {
-  background: rgba(255, 255, 255, 0.9);
-  border-color: rgba(16, 24, 40, 0.08);
-  box-shadow:
-    0 10px 30px rgba(16, 24, 40, 0.08),
-    0 1px 2px rgba(16, 24, 40, 0.04);
-}
-
-/* Navbar panel and links in light mode */
-[data-theme="light"] .nav-links-wrapper {
-  background: rgba(255, 255, 255, 0.98);
-  border-color: rgba(0, 0, 0, 0.06);
-  box-shadow:
-    0 12px 32px rgba(16, 24, 40, 0.10),
-    0 2px 8px rgba(16, 24, 40, 0.06);
-}
-
-[data-theme="light"] .nav-links-wrapper .nav-link {
-  color: rgba(15, 23, 42, 0.78);
-}
-
-[data-theme="light"] .nav-links-wrapper .nav-link:hover,
-[data-theme="light"] .nav-links-wrapper .nav-link:focus {
-  color: rgba(15, 23, 42, 0.95);
-  background: rgba(15, 23, 42, 0.04);
-}
-
-/* Buttons */
-[data-theme="light"] .btn-outline {
-  color: rgba(15, 23, 42, 0.9);
-  border-color: rgba(16, 24, 40, 0.12);
-}
-
-[data-theme="light"] .btn-outline:hover {
-  background: rgba(79, 70, 229, 0.06);
-  border-color: var(--color-primary);
-  color: rgba(15, 23, 42, 0.95);
-}
-
-[data-theme="light"] .btn-secondary {
-  background: #ffffff;
-  color: rgba(15, 23, 42, 0.8);
-  border-color: rgba(16, 24, 40, 0.1);
-}
-
-[data-theme="light"] .btn-secondary:hover {
-  background: var(--color-primary);
-  color: #ffffff;
-  border-color: var(--color-primary);
-}
-
-/* Panels and list items */
-[data-theme="light"] .stat-item,
-[data-theme="light"] .highlight-item,
-[data-theme="light"] .contact-item,
-[data-theme="light"] .social-link {
-  background: rgba(255, 255, 255, 0.78);
-  border-color: rgba(16, 24, 40, 0.08);
-}
-
-[data-theme="light"] .contact-item:hover,
-[data-theme="light"] .social-link:hover {
-  background: rgba(79, 70, 229, 0.06);
-}
-
-/* Tags */
-[data-theme="light"] .skill-tag,
-[data-theme="light"] .tech-tag {
-  background: rgba(79, 70, 229, 0.06);
-  color: var(--color-primary);
-  border-color: rgba(79, 70, 229, 0.2);
-}
-
-/* Forms */
-[data-theme="light"] .form-control {
-  background: rgba(255, 255, 255, 0.9);
-  border-color: rgba(16, 24, 40, 0.1);
-}
-
-[data-theme="light"] .form-control:focus {
-  background: rgba(79, 70, 229, 0.04);
-  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.12);
-}
-
-/* Background grid subtle darkening for light */
-[data-theme="light"] body::after {
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
-}
-
-/* Theme toggle polish */
-[data-theme="light"] .theme-toggle {
-  background: rgba(255, 255, 255, 0.95);
-  border-color: rgba(0, 0, 0, 0.06);
-}
-
-/* Light theme toggle button */
-[data-theme="light"] .nav-toggle {
-  background: rgba(255, 255, 255, 0.95);
-  border-color: rgba(0, 0, 0, 0.1);
-  color: rgba(15, 23, 42, 0.9);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-}
-
-[data-theme="light"] .nav-toggle:hover {
-  background: rgba(79, 70, 229, 0.08);
-  border-color: var(--color-primary);
-  transform: translateY(-50%) scale(1.05);
-}
-
-/* ============================================
-   LIGHT MODE POLISH (refinements)
-   ============================================ */
-
-/* Softer animated background for light mode */
-[data-theme="light"] body::before {
-  background:
-    radial-gradient(circle at 20% 20%, rgba(79, 70, 229, 0.06) 0%, transparent 40%),
-    radial-gradient(circle at 80% 20%, rgba(6, 182, 212, 0.05) 0%, transparent 40%),
-    radial-gradient(circle at 20% 80%, rgba(16, 185, 129, 0.04) 0%, transparent 40%),
-    radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.05) 0%, transparent 40%);
-}
-
-/* Navbar in light mode: scrolled and hover states */
-[data-theme="light"] .main-navbar.scrolled {
-  background: rgba(255, 255, 255, 0.98);
-  border-color: rgba(0, 0, 0, 0.08);
-  box-shadow:
-    0 12px 32px rgba(16, 24, 40, 0.08),
-    0 4px 12px rgba(16, 24, 40, 0.06),
-    inset 0 1px 0 rgba(255, 255, 255, 0.6);
-}
-
-[data-theme="light"] .main-navbar:hover {
-  box-shadow:
-    0 14px 36px rgba(16, 24, 40, 0.10),
-    0 6px 16px rgba(16, 24, 40, 0.06),
-    inset 0 1px 0 rgba(255, 255, 255, 0.65);
-}
-
-/* Gentler active pill glow in light mode */
-[data-theme="light"] .main-navbar .active-pill {
-  box-shadow:
-    0 8px 22px rgba(79, 70, 229, 0.18),
-    0 3px 10px rgba(79, 70, 229, 0.12),
-    inset 0 1px 0 rgba(255, 255, 255, 0.6);
-}
-
-/* Lighter hover states for panels and list items */
-[data-theme="light"] .stat-item:hover,
-[data-theme="light"] .highlight-item:hover,
-[data-theme="light"] .contact-item:hover,
-[data-theme="light"] .social-link:hover {
-  background: rgba(79, 70, 229, 0.06);
-  border-color: rgba(79, 70, 229, 0.22);
-}
-
-/* Mobile: brighter open navbar panel */
-@media (max-width: 768px) {
-  [data-theme="light"] .main-navbar:has(.nav-links-wrapper.open) {
-    background: rgba(255, 255, 255, 0.98);
-    border-color: rgba(0, 0, 0, 0.08);
-    box-shadow:
-      0 18px 40px rgba(16, 24, 40, 0.10),
-      0 6px 16px rgba(16, 24, 40, 0.06),
-      inset 0 1px 0 rgba(255, 255, 255, 0.65);
-  }
-
-  [data-theme="light"] .nav-toggle:has(.hamburger.open) {
-    background: rgba(79, 70, 229, 0.08);
-    border: 1px solid rgba(79, 70, 229, 0.35);
-    box-shadow: 0 4px 14px rgba(79, 70, 229, 0.25);
-  }
-}
-
-/* ============================================
-   MOBILE TOGGLE BUTTON FIXES
-   ============================================ */
-
-@media (max-width: 768px) {
-  /* Ensure toggle button is always visible and functional */
-  .nav-toggle {
-    display: flex !important;
-    z-index: 1200;
+  .hero-section {
+    padding: var(--space-16) 0;
   }
   
-  /* Ensure hover state works on mobile */
-  .nav-toggle:hover {
-    transform: translateY(-50%) scale(1.05);
+  .about-card,
+  .contact-form-card,
+  .contact-info-card {
+    padding: var(--space-6);
   }
   
-  /* Ensure nav links show when open */
-  .nav-links-wrapper.open {
-    display: flex !important;
-    visibility: visible;
+  .skill-card,
+  .certificate-card {
+    padding: var(--space-5);
   }
   
-  /* Debug: Make sure the button is clickable */
-  .nav-toggle,
-  .hamburger {
-    pointer-events: auto;
-    cursor: pointer;
+  .project-content {
+    padding: var(--space-5);
   }
-  
-  /* Ensure proper stacking order */
-  .main-navbar {
-    z-index: var(--z-sticky);
+
+  .profile-image {
+    width: 100px;
+    height: 100px;
   }
-  
-  .nav-toggle {
-    z-index: calc(var(--z-sticky) + 1);
+
+  .section-header {
+    margin-bottom: var(--space-8);
   }
-  
-  .nav-links-wrapper {
-    z-index: calc(var(--z-sticky) + 2);
+
+  .section-title {
+    font-size: clamp(var(--text-xl), 8vw, var(--text-3xl));
+  }
+
+  .modal-header,
+  .modal-image-container,
+  .modal-body {
+    padding: var(--space-2);
+  }
+
+  .modal-image {
+    max-height: 30vh;
+  }
+
+  .footer {
+    padding: var(--space-5) 0;
+    margin-top: var(--space-12);
+  }
+
+  .footer-links {
+    gap: var(--space-3);
   }
 }
 
-/* Hide main navbar on mobile when using bottom nav */
-@media (max-width: 768px) {
-  .main-navbar {
-    display: none !important;
-  }
-}
 
-/* Show main navbar on desktop */
-@media (min-width: 769px) {
-  .main-navbar {
-    display: flex !important;
-  }
-  
-  /* Reset body padding on desktop */
-  body {
-    padding-bottom: 0 !important;
-  }
-}
+
+
+
