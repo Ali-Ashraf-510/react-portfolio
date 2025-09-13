@@ -1,11 +1,11 @@
 // src/routes/Projects.jsx
 import React from 'react';
-import ProjectCard from '../components/ProjectCard';
+import ProjectFilter from '../components/ProjectFilter';
 
 // Importing image assets
 import fireDetectionImg from '../assets/Projects/Fire Detection.png';
 
-// Data is now an array of objects, making it easy to manage and scale.
+// Enhanced projects data with categories and dates for filtering
 const projectsData = [
   {
     id: 1,
@@ -13,6 +13,8 @@ const projectsData = [
     image: fireDetectionImg,
     description: 'A state-of-the-art CNN-based fire detection model built with MobileNetV2 architecture, achieving over 98% accuracy in real-time fire detection. Optimized for mobile deployment with efficient resource utilization.',
     status: 'Completed',
+    category: 'computer-vision',
+    date: '2024-01-15',
     metrics: ['98% Accuracy', 'Real-time'],
     features: [
       'Real-time processing capability',
@@ -36,14 +38,10 @@ const Projects = ({ openModal }) => {
           <p className="section-subtitle">Innovative solutions powered by artificial intelligence</p>
         </header>
 
-        <div className="row justify-content-center">
-          {/* We map over the data array to render each project card dynamically */}
-          {projectsData.map((project) => (
-            <div className="col-lg-8 col-xl-6" key={project.id}>
-              <ProjectCard project={project} openModal={openModal} />
-            </div>
-          ))}
-        </div>
+        <ProjectFilter 
+          projects={projectsData}
+          openModal={openModal}
+        />
       </div>
     </section>
   );

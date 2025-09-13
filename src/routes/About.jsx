@@ -1,6 +1,7 @@
 // src/routes/About.jsx
 import React from 'react';
-import profileImage from '../assets/Profile/profile.jpeg'; // Make sure to import the image
+import profileImage from '../assets/Profile/profile.jpeg';
+import SkillsChart from '../components/SkillsChart';
 
 const About = () => {
   return (
@@ -93,6 +94,28 @@ const About = () => {
                 <p className="skill-description">Comprehensive data science stack with robust ML pipelines, data visualization, and deployment solutions.</p>
                 <div className="skill-tags"><span className="skill-tag">Jupyter</span><span className="skill-tag">Flask</span></div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Skills Chart Section */}
+      <section className="skills-chart-section" id="skills-chart" aria-label="Technical Skills Visualization">
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-lg-8">
+              <SkillsChart 
+                skills={[
+                  { name: 'Python', level: 95, color: '#3776AB' },
+                  { name: 'Machine Learning', level: 90, color: '#FF6B6B' },
+                  { name: 'Deep Learning', level: 88, color: '#4ECDC4' },
+                  { name: 'PyTorch', level: 85, color: '#EE4C2C' },
+                  { name: 'TensorFlow', level: 80, color: '#FF6F00' },
+                  { name: 'Computer Vision', level: 85, color: '#9B59B6' },
+                  { name: 'React', level: 75, color: '#61DAFB' },
+                  { name: 'JavaScript', level: 70, color: '#F7DF1E' }
+                ]}
+              />
             </div>
           </div>
         </div>

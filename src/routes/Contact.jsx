@@ -114,7 +114,7 @@ const Contact = () => {
               </form>
             </div>
           </div>
-          <div className="col-lg-5">
+          <div className="col-lg-5 col-md-6">
              <div className="glass-card contact-info-card h-100">
                <div className="contact-info">
                  <h3 className="contact-title gradient-text">Get in Touch</h3>

@@ -1,6 +1,7 @@
 // src/routes/Home.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
+import TypewriterEffect from '../components/TypewriterEffect';
 
 const Home = () => {
   return (
@@ -15,7 +16,19 @@ const Home = () => {
                   <span className="hero-greeting">Hello, I'm</span>
                   <span className="hero-name gradient-text">Ali Ashraf</span>
                 </h1>
-                <h2 className="hero-subtitle">Machine Learning & Deep Learning Engineer</h2>
+                <h2 className="hero-subtitle">
+                  <TypewriterEffect 
+                    words={[
+                      'Machine Learning Engineer',
+                      'Deep Learning Specialist', 
+                      'Frontend Developer',
+                      'AI Enthusiast'
+                    ]}
+                    typeSpeed={100}
+                    deleteSpeed={50}
+                    pauseTime={2000}
+                  />
+                </h2>
                 <p className="hero-description">Crafting intelligent solutions with cutting-edge algorithms and data-driven insights to solve real-world challenges.</p>
                 <div className="hero-actions">
                   {/* Replaced anchor tags with React Router's Link component for SPA navigation */}
