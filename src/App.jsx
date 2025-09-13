@@ -5,7 +5,6 @@ import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 
 // Import Components and Routes
 import Navbar from './components/Navbar';
-import Footer from './components/Footer';
 import CertificateModal from './components/CertificateModal';
 import ScrollToTop from './components/ScrollToTop';
 
@@ -49,7 +48,6 @@ function AppContent() {
           </Routes>
         </div>
       </main>
-      <Footer />
       {modalData && <CertificateModal data={modalData} onClose={closeModal} />}
     </>
   );

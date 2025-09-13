@@ -7,32 +7,32 @@
      PREMIUM COLOR PALETTE - Next-Gen ML/AI Theme
      ============================================ */
   
-  /* Primary Color System - Electric Sapphire */
-  --color-primary: #4c6ef5;        /* Electric Sapphire */
-  --color-primary-light: #74c0fc;  /* Sky Glow */
-  --color-primary-lighter: #a5d8ff; /* Ethereal Blue */
-  --color-primary-dark: #364fc7;   /* Deep Sapphire */
-  --color-primary-darker: #1c3a8a; /* Midnight Sapphire */
-  --color-primary-glow: rgba(76, 110, 245, 0.45);
-  --color-primary-subtle: rgba(76, 110, 245, 0.08);
+  /* Enhanced Primary Color System - Vibrant Indigo */
+  --color-primary: #6366f1;        /* Enhanced Indigo */
+  --color-primary-light: #818cf8;  /* Bright Indigo */
+  --color-primary-lighter: #a5b4fc; /* Ethereal Blue */
+  --color-primary-dark: #4f46e5;   /* Deep Indigo */
+  --color-primary-darker: #3730a3; /* Midnight Indigo */
+  --color-primary-glow: rgba(99, 102, 241, 0.5);
+  --color-primary-subtle: rgba(99, 102, 241, 0.1);
   
-  /* Secondary Color System - Cyber Cyan */
-  --color-secondary: #00d4ff;      /* Cyber Cyan */
-  --color-secondary-light: #4dd9ff; /* Neon Cyan */
-  --color-secondary-lighter: #80e5ff; /* Ice Cyan */
-  --color-secondary-dark: #00a8cc; /* Deep Cyber */
-  --color-secondary-darker: #006b8a; /* Ocean Depth */
-  --color-secondary-glow: rgba(0, 212, 255, 0.4);
-  --color-secondary-subtle: rgba(0, 212, 255, 0.06);
+  /* Enhanced Secondary Color System - Electric Cyan */
+  --color-secondary: #06b6d4;      /* Vibrant Cyan */
+  --color-secondary-light: #22d3ee; /* Bright Cyan */
+  --color-secondary-lighter: #67e8f9; /* Light Cyan */
+  --color-secondary-dark: #0891b2; /* Deep Cyan */
+  --color-secondary-darker: #0e7490; /* Ocean Cyan */
+  --color-secondary-glow: rgba(6, 182, 212, 0.45);
+  --color-secondary-subtle: rgba(6, 182, 212, 0.08);
   
-  /* Accent Color System - Quantum Emerald */
-  --color-accent: #00e680;         /* Quantum Emerald */
-  --color-accent-light: #4dffaa;   /* Matrix Green */
-  --color-accent-lighter: #80ffc7; /* Mint Glow */
-  --color-accent-dark: #00b366;    /* Forest Matrix */
-  --color-accent-darker: #00804d;  /* Deep Forest */
-  --color-accent-glow: rgba(0, 230, 128, 0.4);
-  --color-accent-subtle: rgba(0, 230, 128, 0.06);
+  /* Enhanced Accent Color System - Neon Emerald */
+  --color-accent: #10b981;         /* Vibrant Emerald */
+  --color-accent-light: #34d399;   /* Bright Emerald */
+  --color-accent-lighter: #6ee7b7; /* Light Emerald */
+  --color-accent-dark: #059669;    /* Deep Emerald */
+  --color-accent-darker: #047857;  /* Forest Emerald */
+  --color-accent-glow: rgba(16, 185, 129, 0.45);
+  --color-accent-subtle: rgba(16, 185, 129, 0.08);
   
   /* Tertiary Color System - Neural Purple */
   --color-tertiary: #a855f7;       /* Neural Purple */
@@ -109,31 +109,31 @@
      DARK MODE - Premium Professional System
      ============================================ */
   
-  /* Background Hierarchy - 7 Levels */
-  --dark-bg-base: #020508;         /* Base canvas */
-  --dark-bg-primary: #0a0e1a;      /* Primary surface */
-  --dark-bg-secondary: #0f1419;    /* Secondary surface */
-  --dark-bg-tertiary: #161b22;     /* Tertiary surface */
-  --dark-bg-elevated: #21262d;     /* Elevated elements */
-  --dark-bg-floating: #2d333b;     /* Floating elements */
-  --dark-bg-overlay: #3c434d;      /* Overlay elements */
+  /* Premium Dark Mode Background Hierarchy - 7 Levels */
+  --dark-bg-base: #0c0c12;         /* Deep cosmic base */
+  --dark-bg-primary: #141420;      /* Rich dark primary */
+  --dark-bg-secondary: #1e1e2a;    /* Elevated secondary */
+  --dark-bg-tertiary: #282836;     /* Interactive tertiary */
+  --dark-bg-elevated: #323244;     /* Floating elements */
+  --dark-bg-floating: #3c3c52;     /* Modal overlays */
+  --dark-bg-overlay: #464660;      /* Top layer overlays */
   
-  /* Advanced Surface Colors with Perfect Transparency */
-  --dark-surface-base: rgba(2, 5, 8, 0.98);
-  --dark-surface-primary: rgba(10, 14, 26, 0.95);
-  --dark-surface-secondary: rgba(15, 20, 25, 0.93);
-  --dark-surface-tertiary: rgba(22, 27, 34, 0.91);
-  --dark-surface-elevated: rgba(33, 38, 45, 0.89);
-  --dark-surface-floating: rgba(45, 51, 59, 0.87);
-  --dark-surface-overlay: rgba(60, 67, 77, 0.85);
+  /* Premium Surface Colors with Enhanced Transparency */
+  --dark-surface-base: rgba(12, 12, 18, 0.98);
+  --dark-surface-primary: rgba(20, 20, 32, 0.95);
+  --dark-surface-secondary: rgba(30, 30, 42, 0.93);
+  --dark-surface-tertiary: rgba(40, 40, 54, 0.91);
+  --dark-surface-elevated: rgba(50, 50, 68, 0.89);
+  --dark-surface-floating: rgba(60, 60, 82, 0.87);
+  --dark-surface-overlay: rgba(70, 70, 96, 0.85);
   
-  /* Text Hierarchy - 6 Levels for Perfect Typography */
-  --dark-text-primary: #f0f6fc;    /* Maximum contrast */
-  --dark-text-secondary: #c9d1d9;  /* High contrast */
-  --dark-text-tertiary: #8b949e;   /* Medium contrast */
-  --dark-text-quaternary: #656d76; /* Low contrast */
-  --dark-text-muted: #484f58;      /* Subtle */
-  --dark-text-disabled: #373e47;   /* Disabled state */
+  /* Enhanced Text Hierarchy with Better Contrast */
+  --dark-text-primary: #f8fafc;    /* Pure white for maximum contrast */
+  --dark-text-secondary: #e2e8f0;  /* Bright secondary */
+  --dark-text-tertiary: #cbd5e1;   /* Clear tertiary */
+  --dark-text-quaternary: #94a3b8; /* Subtle quaternary */
+  --dark-text-muted: #64748b;      /* Muted text */
+  --dark-text-disabled: #475569;   /* Disabled state */
   
   /* ============================================
      SEMANTIC COLOR TOKENS - Default Dark Mode
@@ -179,32 +179,46 @@
      ULTIMATE GLASSMORPHISM SYSTEM
      ============================================ */
   
-  /* Glass Backgrounds - 8 Levels */
-  --glass-bg-subtle: rgba(10, 14, 26, 0.2);
-  --glass-bg-soft: rgba(10, 14, 26, 0.3);
-  --glass-bg-primary: rgba(10, 14, 26, 0.4);
-  --glass-bg-secondary: rgba(15, 20, 25, 0.5);
-  --glass-bg-tertiary: rgba(22, 27, 34, 0.6);
-  --glass-bg-elevated: rgba(33, 38, 45, 0.7);
-  --glass-bg-floating: rgba(45, 51, 59, 0.75);
-  --glass-bg-intense: rgba(60, 67, 77, 0.8);
+  /* Premium Glass Backgrounds - 8 Levels */
+  --glass-bg-subtle: rgba(20, 20, 32, 0.35);
+  --glass-bg-soft: rgba(20, 20, 32, 0.45);
+  --glass-bg-primary: rgba(30, 30, 42, 0.55);
+  --glass-bg-secondary: rgba(40, 40, 54, 0.65);
+  --glass-bg-tertiary: rgba(50, 50, 68, 0.75);
+  --glass-bg-elevated: rgba(60, 60, 82, 0.80);
+  --glass-bg-floating: rgba(70, 70, 96, 0.85);
+  --glass-bg-intense: rgba(80, 80, 110, 0.90);
   
-  /* Glass Borders - Enhanced with Color Accents */
-  --glass-border-subtle: rgba(240, 246, 252, 0.04);
-  --glass-border-soft: rgba(240, 246, 252, 0.06);
-  --glass-border-primary: rgba(240, 246, 252, 0.08);
-  --glass-border-secondary: rgba(240, 246, 252, 0.12);
-  --glass-border-tertiary: rgba(240, 246, 252, 0.16);
-  --glass-border-intense: rgba(240, 246, 252, 0.2);
+  /* Enhanced Glass Borders - Better Contrast */
+  --glass-border-subtle: rgba(248, 250, 252, 0.08);
+  --glass-border-soft: rgba(248, 250, 252, 0.12);
+  --glass-border-primary: rgba(248, 250, 252, 0.16);
+  --glass-border-secondary: rgba(248, 250, 252, 0.20);
+  --glass-border-tertiary: rgba(248, 250, 252, 0.24);
+  --glass-border-intense: rgba(248, 250, 252, 0.28);
   
-  /* Colored Glass Borders */
-  --glass-border-primary-accent: rgba(76, 110, 245, 0.4);
-  --glass-border-secondary-accent: rgba(0, 212, 255, 0.35);
-  --glass-border-tertiary-accent: rgba(168, 85, 247, 0.4);
-  --glass-border-quaternary-accent: rgba(255, 107, 157, 0.4);
-  --glass-border-success-accent: rgba(0, 230, 128, 0.4);
-  --glass-border-warning-accent: rgba(255, 179, 71, 0.4);
-  --glass-border-error-accent: rgba(255, 71, 87, 0.4);
+  /* Enhanced Colored Glass Borders */
+  --glass-border-primary-accent: rgba(99, 102, 241, 0.5);
+  --glass-border-secondary-accent: rgba(6, 182, 212, 0.45);
+  --glass-border-tertiary-accent: rgba(168, 85, 247, 0.5);
+  --glass-border-quaternary-accent: rgba(255, 107, 157, 0.5);
+  --glass-border-success-accent: rgba(16, 185, 129, 0.5);
+  --glass-border-warning-accent: rgba(255, 179, 71, 0.5);
+  --glass-border-error-accent: rgba(255, 71, 87, 0.5);
+  
+  /* Premium Dark Mode Special Effects */
+  --dark-glow-primary: 0 0 25px rgba(99, 102, 241, 0.4);
+  --dark-glow-secondary: 0 0 25px rgba(6, 182, 212, 0.4);
+  --dark-glow-accent: 0 0 25px rgba(16, 185, 129, 0.4);
+  --dark-glow-tertiary: 0 0 25px rgba(168, 85, 247, 0.4);
+  
+  /* Enhanced Night Mode Accent Colors */
+  --night-accent-purple: #8b5cf6;
+  --night-accent-blue: #3b82f6;
+  --night-accent-cyan: #06b6d4;
+  --night-accent-emerald: #10b981;
+  --night-accent-pink: #ec4899;
+  --night-accent-orange: #f59e0b;
   
   /* ============================================
      PREMIUM SHADOW SYSTEM
@@ -255,12 +269,18 @@
      ULTIMATE GRADIENT SYSTEM
      ============================================ */
   
-  /* Enhanced Single-Color Gradients */
+  /* Enhanced Single-Color Gradients with Vibrant Colors */
   --gradient-primary: linear-gradient(135deg, var(--color-primary-lighter) 0%, var(--color-primary-light) 25%, var(--color-primary) 50%, var(--color-primary-dark) 75%, var(--color-primary-darker) 100%);
   --gradient-secondary: linear-gradient(135deg, var(--color-secondary-lighter) 0%, var(--color-secondary-light) 25%, var(--color-secondary) 50%, var(--color-secondary-dark) 75%, var(--color-secondary-darker) 100%);
   --gradient-accent: linear-gradient(135deg, var(--color-accent-lighter) 0%, var(--color-accent-light) 25%, var(--color-accent) 50%, var(--color-accent-dark) 75%, var(--color-accent-darker) 100%);
   --gradient-tertiary: linear-gradient(135deg, var(--color-tertiary-lighter) 0%, var(--color-tertiary-light) 25%, var(--color-tertiary) 50%, var(--color-tertiary-dark) 75%, var(--color-tertiary-darker) 100%);
   --gradient-quaternary: linear-gradient(135deg, var(--color-quaternary-lighter) 0%, var(--color-quaternary-light) 25%, var(--color-quaternary) 50%, var(--color-quaternary-dark) 75%, var(--color-quaternary-darker) 100%);
+  
+  /* Dark Mode Specific Enhanced Gradients */
+  --dark-gradient-primary: linear-gradient(135deg, #818cf8 0%, #6366f1 50%, #4f46e5 100%);
+  --dark-gradient-secondary: linear-gradient(135deg, #22d3ee 0%, #06b6d4 50%, #0891b2 100%);
+  --dark-gradient-accent: linear-gradient(135deg, #34d399 0%, #10b981 50%, #059669 100%);
+  --dark-gradient-surface: linear-gradient(135deg, var(--dark-bg-primary) 0%, var(--dark-bg-secondary) 100%);
   
   /* Premium Multi-Color Gradients */
   --gradient-rainbow: linear-gradient(135deg, 
@@ -584,11 +604,11 @@ body::before {
   position: fixed;
   inset: 0;
   background: 
-    radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.15) 0%, transparent 40%),
-    radial-gradient(circle at 80% 20%, rgba(6, 182, 212, 0.12) 0%, transparent 40%),
-    radial-gradient(circle at 20% 80%, rgba(16, 185, 129, 0.1) 0%, transparent 40%),
-    radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.12) 0%, transparent 40%),
-    radial-gradient(circle at 50% 50%, rgba(79, 70, 229, 0.05) 0%, transparent 60%);
+    radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.20) 0%, transparent 45%),
+    radial-gradient(circle at 80% 20%, rgba(6, 182, 212, 0.18) 0%, transparent 45%),
+    radial-gradient(circle at 20% 80%, rgba(16, 185, 129, 0.16) 0%, transparent 45%),
+    radial-gradient(circle at 80% 80%, rgba(168, 85, 247, 0.18) 0%, transparent 45%),
+    radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.08) 0%, transparent 65%);
   animation: floatingGradients 25s ease-in-out infinite;
   z-index: -2;
 }
