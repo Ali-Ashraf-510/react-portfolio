@@ -298,7 +298,7 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 - 🛠️ **Tech Stack**: Python, TensorFlow, PyTorch, React, Node.js
 - 🌐 **Portfolio**: [https://react-portfolio-three-jet.vercel.app/](https://react-portfolio-three-jet.vercel.app/)
 - 📧 **Contact**: [aliabofooda1234@gmail.com](aliabofooda1234@gmail.com)
-- 💼 **LinkedIn**: [linkedin.com/in/ali-ashraf-8b619b22a](linkedin.com/in/ali-ashraf-8b619b22a)
+- 💼 **LinkedIn**: [www.linkedin.com/in/ali-ashraf-8b619b22a](www.linkedin.com/in/ali-ashraf-8b619b22a)
 
 ---
 
@@ -308,8 +308,8 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 Made with ❤️ and lots of ☕ by **Ali Ashraf**
 
-[![GitHub](https://img.shields.io/badge/GitHub-Follow-black?style=social&logo=github)](https://github.com/yourusername)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=social&logo=linkedin)](https://linkedin.com/in/yourprofile)
-[![Twitter](https://img.shields.io/badge/Twitter-Follow-1DA1F2?style=social&logo=twitter)](https://twitter.com/yourusername)
+[![GitHub](https://img.shields.io/badge/GitHub-Follow-black?style=social&logo=github)](https://github.com/Ali-Ashraf-510)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=social&logo=linkedin)](www.linkedin.com/in/ali-ashraf-8b619b22a)
+[![Twitter](https://img.shields.io/badge/Twitter-Follow-1DA1F2?style=social&logo=twitter)](www.linkedin.com/in/ali-ashraf-8b619b22a](https://x.com/realAliAshraf))
 
 </div>
