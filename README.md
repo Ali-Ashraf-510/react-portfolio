@@ -298,7 +298,7 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 - 🛠️ **Tech Stack**: Python, TensorFlow, PyTorch, React, Node.js
 - 🌐 **Portfolio**: [https://react-portfolio-three-jet.vercel.app/](https://react-portfolio-three-jet.vercel.app/)
 - 📧 **Contact**: [aliabofooda1234@gmail.com](aliabofooda1234@gmail.com)
-- 💼 **LinkedIn**: [[linkedin.com/in/yourprofile](https://www.linkedin.com/in/ali-ashraf-8b619b22a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BGNOs1fk1S7OhIG2y4cYKQw%3D%3D)](https://www.linkedin.com/in/ali-ashraf-8b619b22a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BGNOs1fk1S7OhIG2y4cYKQw%3D%3D)
+- 💼 **LinkedIn**: [linkedin.com/in/ali-ashraf-8b619b22a](linkedin.com/in/ali-ashraf-8b619b22a)
 
 ---
 
