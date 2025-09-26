@@ -4,7 +4,7 @@ import React from 'react';
 const ProjectCard = ({ project, openModal }) => {
   const {
     title, image, description, status, metrics, features,
-    techStack, githubUrl, demoUrl
+    techStack, githubUrl, demoUrl, algorithm, mlType
   } = project;
 
   // The inline onclick function is replaced by a React onClick handler
@@ -23,7 +23,7 @@ const ProjectCard = ({ project, openModal }) => {
       <div className="project-image-wrapper">
         <img
           src={image}
-          alt={`${title} - Real-time fire detection using CNN`}
+          alt={`${title} - ${algorithm || 'Machine Learning Project'}`}
           className="project-image clickable-image"
           loading="lazy"
           onClick={handleImageClick}
@@ -42,11 +42,30 @@ const ProjectCard = ({ project, openModal }) => {
 
       <div className="project-content">
         <header className="project-header">
-          <h3 className="project-title">{title}</h3>
+          <div className="project-title-group">
+            <h3 className="project-title">{title}</h3>
+            {algorithm && (
+              <div className="algorithm-badge">
+                <i className="fas fa-cogs" aria-hidden="true"></i>
+                <span>{algorithm}</span>
+              </div>
+            )}
+          </div>
           <div className="project-status">
             <span className={`status-badge status-${status.toLowerCase()}`}>{status}</span>
           </div>
         </header>
+
+        {mlType && (
+          <div className="ml-type-indicator">
+            <i className="fas fa-brain" aria-hidden="true"></i>
+            <span className="ml-type-text">
+              {mlType.split('-').map(word => 
+                word.charAt(0).toUpperCase() + word.slice(1)
+              ).join(' ')}
+            </span>
+          </div>
+        )}
 
         <p className="project-description">{description}</p>
 
@@ -73,7 +92,7 @@ const ProjectCard = ({ project, openModal }) => {
             aria-label={`View ${title} project on GitHub`}
           >
             <i className="fab fa-github" aria-hidden="true"></i>
-            <span>View on GitHub</span>
+            <span>View Code</span>
           </a>
           <a
             href={demoUrl}
