@@ -4,6 +4,9 @@ import ProjectFilter from '../components/ProjectFilter';
 
 // Importing image assets
 import fireDetectionImg from '../assets/Projects/Fire Detection.png';
+import housePriceImg from '../assets/Projects/House Price Predictor.png';
+import salesPredictionImg from '../assets/Projects/LR/Sales Prediction App.png';
+import insuranceChargeImg from '../assets/Projects/LR/insurance-charge-predictor.png';
 
 // Enhanced projects data with ML-specific categories and algorithms
 const projectsData = [
@@ -32,7 +35,7 @@ const projectsData = [
   {
     id: 2,
     title: 'House Price Predictor',
-    image: '../assets/Projects/project image .png', // Replace with actual image
+    image: housePriceImg,
     description: 'Linear regression model for predicting house prices based on features like location, size, and amenities. Includes data preprocessing, feature engineering, and model evaluation.',
     status: 'Completed',
     category: 'regression',
@@ -54,7 +57,7 @@ const projectsData = [
   {
     id: 3,
     title: 'Sales Prediction Linear Regression',
-    image: "src/assets/Projects/LR/Sales Prediction App.png", // Replace with actual image
+    image: salesPredictionImg,
     description: 'Linear regression model to predict future sales based on historical sales data, seasonal trends, and promotional activities. Includes data cleaning, feature engineering, and model evaluation.',
     status: 'Completed',
     category: 'clustering',
@@ -76,7 +79,7 @@ const projectsData = [
   {
     id: 4,
     title: 'Insurance Charges Predictor',
-    image: "src/assets/Projects/LR/insurance-charge-predictor.png", // Replace with actual image
+    image: insuranceChargeImg,
     description: 'Linear regression model for predicting insurance charges based on various factors such as age, BMI, and smoking status.',
     status: 'Completed',
     category: 'regression',
