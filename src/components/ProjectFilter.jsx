@@ -1,7 +1,7 @@
 // src/components/ProjectFilter.jsx
 import React, { useState, useMemo } from 'react';
 import ProjectCard from './ProjectCard';
-import { mlCategories, mlAlgorithms } from '../routes/Projects';
+import { mlCategories, mlAlgorithms } from '../data/mlConstants';
 
 /**
  * ProjectFilter Component

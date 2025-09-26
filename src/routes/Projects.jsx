@@ -93,7 +93,6 @@ const projectsData = [
     demoUrl: '#',
   },
 ];
-// ML Algorithm categories and algorithms moved to src/data/mlConstants.js
 
 const Projects = ({ openModal }) => {
   return (
