@@ -3,7 +3,10 @@ import React from 'react';
 import ProjectFilter from '../components/ProjectFilter';
 
 // Importing image assets - only import existing images
-import fireDetectionImg from '../assets/Projects/Fire Detection.png';
+import fireDetectionImg from '../assets/Projects/CV/Fire Detection.png';
+import SalesPredictionApp from '../assets/Projects/LR/SalesPredictionApp.png';
+import InsurancechargePredictor from '../assets/Projects/LR/InsurancechargePredictor.png';
+import HousePreicePredictor from '../assets/Projects/LR/HousePreicePredictor.png';
 
 // Enhanced projects data with ML-specific categories and algorithms
 const projectsData = [
@@ -34,7 +37,7 @@ const projectsData = [
 	{
 		id: 2,
 		title: 'House Price Predictor',
-		image: fireDetectionImg, // Using placeholder image until actual image is added
+		image: HousePreicePredictor, // Using placeholder image until actual image is added
 		description:
 			'Linear regression model for predicting house prices based on features like location, size, and amenities. Includes data preprocessing, feature engineering, and model evaluation.',
 		status: 'Completed',
@@ -57,7 +60,7 @@ const projectsData = [
 	{
 		id: 3,
 		title: 'Sales Prediction Linear Regression',
-		image: fireDetectionImg, // Using placeholder image until actual image is added
+		image: SalesPredictionApp, // Using placeholder image until actual image is added
 		description:
 			'Linear regression model to predict future sales based on historical sales data, seasonal trends, and promotional activities. Includes data cleaning, feature engineering, and model evaluation.',
 		status: 'Completed',
@@ -80,7 +83,7 @@ const projectsData = [
 	{
 		id: 4,
 		title: 'Insurance Charges Predictor',
-		image: fireDetectionImg, // Using placeholder image until actual image is added
+		image: InsurancechargePredictor, // Using placeholder image until actual image is added
 		description:
 			'Linear regression model for predicting insurance charges based on various factors such as age, BMI, and smoking status.',
 		status: 'Completed',
