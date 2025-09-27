@@ -83,30 +83,31 @@ const ProjectCard = ({ project, openModal }) => {
         <p className="project-description">{description}</p>
 
         <div className="project-features">
-          <h4 className="features-title">Key Features</h4>
           <ul className="features-list">
-            {features.slice(0, 3).map((feature, index) => (
+            {features.slice(0, 2).map((feature, index) => (
               <li key={index}>
                 <i className="fas fa-check-circle" aria-hidden="true"></i>
                 {feature}
               </li>
             ))}
-            {features.length > 3 && (
+            {features.length > 2 && (
               <li className="features-more">
-                <span>+{features.length - 3} more features</span>
+                <span>+{features.length - 2} more features</span>
               </li>
             )}
           </ul>
         </div>
 
         <div className="tech-stack">
-          <h4 className="tech-title">Tech Stack</h4>
           <div className="tech-tags">
-            {techStack.map((tech, index) => (
+            {techStack.slice(0, 3).map((tech, index) => (
               <span key={index} className={`tech-tag ${index === 0 ? 'primary' : ''}`}>
                 {tech}
               </span>
             ))}
+            {techStack.length > 3 && (
+              <span className="tech-tag more-tech">+{techStack.length - 3}</span>
+            )}
           </div>
         </div>
 
@@ -121,7 +122,7 @@ const ProjectCard = ({ project, openModal }) => {
             <i className="fab fa-github" aria-hidden="true"></i>
             <span>View Code</span>
           </a>
-          {demoUrl !== '#' ? (
+          {demoUrl !== '#' && (
             <a
               href={demoUrl}
               className="btn-secondary"
@@ -130,17 +131,8 @@ const ProjectCard = ({ project, openModal }) => {
               aria-label={`View ${title} project demo`}
             >
               <i className="fas fa-external-link-alt" aria-hidden="true"></i>
-              <span>Live Demo</span>
+              <span>Demo</span>
             </a>
-          ) : (
-            <button 
-              className="btn-secondary"
-              onClick={handleImageClick}
-              aria-label={`View ${title} project details`}
-            >
-              <i className="fas fa-eye" aria-hidden="true"></i>
-              <span>View Details</span>
-            </button>
           )}
         </div>
       </div>

@@ -123,7 +123,9 @@ const Projects = ({ openModal }) => {
 					</p>
 				</header>
 
-				<ProjectFilter projects={projectsData} openModal={openModal} />
+				<div className="projects-grid">
+					<ProjectFilter projects={projectsData} openModal={openModal} />
+				</div>
 			</div>
 		</section>
 	);
