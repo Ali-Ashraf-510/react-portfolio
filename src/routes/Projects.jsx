@@ -1,6 +1,7 @@
 // src/routes/Projects.jsx
 import React from 'react';
 import ProjectFilter from '../components/ProjectFilter';
+import styles from './Projects.module.css';
 
 // Importing image assets - only import existing images
 import fireDetectionImg from '../assets/Projects/CV/Fire Detection.png';
@@ -108,22 +109,22 @@ const projectsData = [
 const Projects = ({ openModal }) => {
 	return (
 		<section
-			className="projects-section"
+			className={`projects-section ${styles.container}`}
 			id="projects"
 			aria-label="Machine Learning Projects Portfolio"
 		>
 			<div className="container">
-				<header className="section-header text-center mb-5">
-					<h2 className="section-title gradient-text">
+				<header className={`section-header text-center mb-5 ${styles.sectionHeader}`}>
+					<h2 className={`section-title gradient-text ${styles.sectionTitle}`}>
 						Machine Learning Projects
 					</h2>
-					<p className="section-subtitle">
+					<p className={`section-subtitle ${styles.sectionSubtitle}`}>
 						Explore different types of ML algorithms and their real-world
 						applications
 					</p>
 				</header>
 
-				<div className="projects-grid">
+				<div className={`projects-grid ${styles.projectsGrid}`}>
 					<ProjectFilter projects={projectsData} openModal={openModal} />
 				</div>
 			</div>

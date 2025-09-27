@@ -1,5 +1,6 @@
 // src/components/ProjectCard.jsx
 import React from 'react';
+import styles from './ProjectCard.module.css';
 
 const ProjectCard = ({ project, openModal }) => {
   const {
@@ -18,28 +19,28 @@ const ProjectCard = ({ project, openModal }) => {
   };
 
   return (
-    <article className="glass-card project-card">
-      <div className="project-image-wrapper">
+    <article className={`glass-card project-card ${styles.projectCard}`}>
+      <div className={`project-image-wrapper ${styles.imageWrapper}`}>
         <img
           src={image}
           alt={`${title} - ${algorithm || 'Machine Learning Project'}`}
-          className="project-image clickable-image"
+          className={`project-image clickable-image ${styles.projectImage}`}
           loading="lazy"
           onClick={handleImageClick}
           onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && handleImageClick()}
           role="button"
           tabIndex="0"
         />
-        <div className="project-overlay">
-          <div className="project-overlay-content">
-            <div className="project-metrics">
+        <div className={`project-overlay ${styles.overlay}`}>
+          <div className={`project-overlay-content ${styles.overlayContent}`}>
+            <div className={`project-metrics ${styles.metrics}`}>
               {metrics.map((metric, index) => (
-                <span key={index} className="metric">{metric}</span>
+                <span key={index} className={`metric ${styles.metric}`}>{metric}</span>
               ))}
             </div>
-            <div className="overlay-actions">
+            <div className={`overlay-actions ${styles.overlayActions}`}>
               <button 
-                className="overlay-btn"
+                className={`overlay-btn ${styles.overlayBtn}`}
                 onClick={handleImageClick}
                 aria-label={`View ${title} details`}
               >
@@ -50,19 +51,19 @@ const ProjectCard = ({ project, openModal }) => {
         </div>
       </div>
 
-      <div className="project-content">
-        <header className="project-header">
-          <div className="project-title-group">
-            <h3 className="project-title">{title}</h3>
+      <div className={`project-content ${styles.content}`}>
+        <header className={`project-header ${styles.header}`}>
+          <div className={`project-title-group ${styles.titleGroup}`}>
+            <h3 className={`project-title ${styles.title}`}>{title}</h3>
             {algorithm && (
-              <div className="algorithm-badge">
+              <div className={`algorithm-badge ${styles.algorithmBadge}`}>
                 <i className="fas fa-cogs" aria-hidden="true"></i>
                 <span>{algorithm}</span>
               </div>
             )}
           </div>
           <div className="project-status">
-            <span className={`status-badge status-${status.toLowerCase()}`}>
+            <span className={`status-badge status-completed ${styles.statusBadge} ${styles.statusCompleted}`}>
               <i className="fas fa-circle" aria-hidden="true"></i>
               {status}
             </span>
@@ -70,7 +71,7 @@ const ProjectCard = ({ project, openModal }) => {
         </header>
 
         {mlType && (
-          <div className="ml-type-indicator">
+          <div className={`ml-type-indicator ${styles.mlTypeIndicator}`}>
             <i className="fas fa-brain" aria-hidden="true"></i>
             <span className="ml-type-text">
               {mlType.split('-').map(word => 
@@ -80,10 +81,10 @@ const ProjectCard = ({ project, openModal }) => {
           </div>
         )}
 
-        <p className="project-description">{description}</p>
+        <p className={`project-description ${styles.description}`}>{description}</p>
 
-        <div className="project-features">
-          <ul className="features-list">
+        <div className={`project-features ${styles.features}`}>
+          <ul className={`features-list ${styles.featuresList}`}>
             {features.slice(0, 2).map((feature, index) => (
               <li key={index}>
                 <i className="fas fa-check-circle" aria-hidden="true"></i>
@@ -91,27 +92,27 @@ const ProjectCard = ({ project, openModal }) => {
               </li>
             ))}
             {features.length > 2 && (
-              <li className="features-more">
+              <li className={`features-more ${styles.featuresMore}`}>
                 <span>+{features.length - 2} more features</span>
               </li>
             )}
           </ul>
         </div>
 
-        <div className="tech-stack">
-          <div className="tech-tags">
+        <div className={`tech-stack ${styles.techStack}`}>
+          <div className={`tech-tags ${styles.techTags}`}>
             {techStack.slice(0, 3).map((tech, index) => (
-              <span key={index} className={`tech-tag ${index === 0 ? 'primary' : ''}`}>
+              <span key={index} className={`tech-tag ${styles.techTag} ${index === 0 ? styles.primary : ''}`}>
                 {tech}
               </span>
             ))}
             {techStack.length > 3 && (
-              <span className="tech-tag more-tech">+{techStack.length - 3}</span>
+              <span className={`tech-tag more-tech ${styles.techTag} ${styles.moreTech}`}>+{techStack.length - 3}</span>
             )}
           </div>
         </div>
 
-        <div className="project-actions">
+        <div className={`project-actions ${styles.actions}`}>
           <a
             href={githubUrl}
             className="btn-primary-gradient"
