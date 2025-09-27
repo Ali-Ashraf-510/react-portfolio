@@ -1,3 +1,346 @@
-.container {
-  padding: 16px;
+/* ============================================
+   CONTACT COMPONENT STYLES
+   ============================================ */
+
+/* Contact Section */
+.contactSection {
+  padding: 6rem 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+/* Contact Form Card */
+.contactFormCard {
+  padding: 2.5rem;
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border-primary);
+  box-shadow: var(--glass-shadow);
+  transition: all 0.3s ease;
+}
+
+.contactFormCard:hover {
+  transform: translateY(-0.3125rem);
+  box-shadow: var(--glass-hover-shadow);
+  border-color: var(--glass-border-primary-accent);
+}
+
+/* Contact Form */
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Form Groups */
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Form Labels */
+.formLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+.formLabel i {
+  color: var(--color-primary);
+  width: 1rem;
+  text-align: center;
+}
+
+/* Form Controls */
+.formControl {
+  padding: 1rem 1.25rem;
+  border: 2px solid var(--glass-border-subtle);
+  border-radius: 0.75rem;
+  background: var(--glass-bg-subtle);
+  color: var(--text-primary);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.formControl:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-subtle);
+  background: var(--glass-bg-soft);
+}
+
+.formControl::placeholder {
+  color: var(--text-quaternary);
+  opacity: 0.8;
+}
+
+.formControl.isInvalid {
+  border-color: var(--color-error);
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+/* Form Feedback */
+.formFeedback {
+  color: var(--color-error);
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.formFeedback::before {
+  content: "⚠";
+  font-size: 0.75rem;
+}
+
+/* Submit Button */
+.btnSubmit {
+  margin-top: 1rem;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  position: relative;
+  overflow: hidden;
+}
+
+.btnSubmit.loading .btnText {
+  opacity: 0;
+}
+
+.btnSubmit.loading .btnLoader {
+  opacity: 1;
+}
+
+.btnLoader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Contact Info Card */
+.contactInfoCard {
+  padding: 2.5rem;
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border-primary);
+  box-shadow: var(--glass-shadow);
+  transition: all 0.3s ease;
+  height: 100%;
+  width: 100%;
+  min-width: 0;
+  overflow: visible;
+}
+
+.contactInfoCard:hover {
+  transform: translateY(-0.3125rem);
+  box-shadow: var(--glass-hover-shadow);
+  border-color: var(--glass-border-secondary-accent);
+}
+
+/* Contact Info */
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  height: 100%;
+  width: 100%;
+  min-width: 0;
+}
+
+.contactTitle {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.contactIntro {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* Contact Details */
+.contactDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contactItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  background: var(--glass-bg-subtle);
+  border: 1px solid var(--glass-border-subtle);
+  transition: all 0.3s ease;
+}
+
+.contactItem:hover {
+  background: var(--glass-bg-soft);
+  border-color: var(--glass-border-primary);
+  transform: translateX(0.3125rem);
+}
+
+.contactIcon {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.625rem;
+  background: var(--gradient-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.contactContent h4 {
+  color: var(--text-primary);
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  font-size: 0.95rem;
+}
+
+.contactContent span,
+.contactLink {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.contactLink {
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contactLink:hover {
+  color: var(--color-primary);
+}
+
+/* Social Links */
+.socialLinks {
+  margin-top: auto;
+  width: 100%;
+  min-width: 0;
+}
+
+.socialTitle {
+  color: var(--text-primary);
+  font-weight: 600;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.socialButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+  min-width: 0;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.875rem 1rem;
+  border-radius: 0.625rem;
+  background: var(--glass-bg-subtle);
+  border: 1px solid var(--glass-border-subtle);
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: visible;
+  min-width: fit-content;
+}
+
+.socialLink:hover {
+  background: var(--glass-bg-soft);
+  border-color: var(--glass-border-primary);
+  color: var(--text-primary);
+  transform: translateX(0.3125rem);
+}
+
+.socialLink.linkedin:hover {
+  border-color: #0077b5;
+  color: #0077b5;
+}
+
+.socialLink.github:hover {
+  border-color: #333;
+  color: #333;
+}
+
+.socialLink.email:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.socialLink i {
+  width: 1.25rem;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+/* Mobile Responsive Contact Styles */
+@media (max-width: 768px) {
+  .contactSection {
+    padding: 4rem 0;
+  }
+  
+  .contactFormCard,
+  .contactInfoCard {
+    padding: 1.5rem;
+  }
+  
+  .contactForm {
+    gap: 1.25rem;
+  }
+  
+  .formControl {
+    padding: 0.875rem 1rem;
+  }
+  
+  .contactDetails {
+    gap: 1.25rem;
+  }
+  
+  .contactItem {
+    padding: 0.875rem;
+  }
+  
+  .socialButtons {
+    gap: 0.5rem;
+  }
+  
+  .socialLink {
+    padding: 0.75rem 0.875rem;
+    white-space: nowrap;
+    overflow: visible;
+    min-width: fit-content;
+  }
+  
+  .socialButtons {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+/* Light theme social links */
+[data-theme="light"] .socialLink {
+  background: var(--glass-bg-primary);
+  border-color: var(--glass-border-secondary);
 }
