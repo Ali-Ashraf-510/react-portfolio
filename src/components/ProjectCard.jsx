@@ -7,14 +7,13 @@ const ProjectCard = ({ project, openModal }) => {
     techStack, githubUrl, demoUrl, algorithm, mlType
   } = project;
 
-  // The inline onclick function is replaced by a React onClick handler
-  // which calls the `openModal` function passed down from App.jsx.
   const handleImageClick = () => {
     openModal({
       title,
       image,
       description,
       type: 'project',
+      project: project, // Pass full project data for enhanced modal
     });
   };
 
@@ -32,10 +31,21 @@ const ProjectCard = ({ project, openModal }) => {
           tabIndex="0"
         />
         <div className="project-overlay">
-          <div className="project-metrics">
-            {metrics.map((metric, index) => (
-              <span key={index} className="metric">{metric}</span>
-            ))}
+          <div className="project-overlay-content">
+            <div className="project-metrics">
+              {metrics.map((metric, index) => (
+                <span key={index} className="metric">{metric}</span>
+              ))}
+            </div>
+            <div className="overlay-actions">
+              <button 
+                className="overlay-btn"
+                onClick={handleImageClick}
+                aria-label={`View ${title} details`}
+              >
+                <i className="fas fa-expand" aria-hidden="true"></i>
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -52,7 +62,10 @@ const ProjectCard = ({ project, openModal }) => {
             )}
           </div>
           <div className="project-status">
-            <span className={`status-badge status-${status.toLowerCase()}`}>{status}</span>
+            <span className={`status-badge status-${status.toLowerCase()}`}>
+              <i className="fas fa-circle" aria-hidden="true"></i>
+              {status}
+            </span>
           </div>
         </header>
 
@@ -70,17 +83,31 @@ const ProjectCard = ({ project, openModal }) => {
         <p className="project-description">{description}</p>
 
         <div className="project-features">
+          <h4 className="features-title">Key Features</h4>
           <ul className="features-list">
-            {features.map((feature, index) => (
-              <li key={index}>{feature}</li>
+            {features.slice(0, 3).map((feature, index) => (
+              <li key={index}>
+                <i className="fas fa-check-circle" aria-hidden="true"></i>
+                {feature}
+              </li>
             ))}
+            {features.length > 3 && (
+              <li className="features-more">
+                <span>+{features.length - 3} more features</span>
+              </li>
+            )}
           </ul>
         </div>
 
         <div className="tech-stack">
-          {techStack.map((tech, index) => (
-            <span key={index} className={`tech-tag ${index === 0 ? 'primary' : ''}`}>{tech}</span>
-          ))}
+          <h4 className="tech-title">Tech Stack</h4>
+          <div className="tech-tags">
+            {techStack.map((tech, index) => (
+              <span key={index} className={`tech-tag ${index === 0 ? 'primary' : ''}`}>
+                {tech}
+              </span>
+            ))}
+          </div>
         </div>
 
         <div className="project-actions">
@@ -94,17 +121,27 @@ const ProjectCard = ({ project, openModal }) => {
             <i className="fab fa-github" aria-hidden="true"></i>
             <span>View Code</span>
           </a>
-          <a
-            href={demoUrl}
-            className="btn-secondary"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ textDecoration: 'none', color: 'inherit' }}
-            aria-label={`View ${title} project demo`}
-          >
-            <i className="fas fa-play" aria-hidden="true"></i>
-            <span>Live Demo</span>
-          </a>
+          {demoUrl !== '#' ? (
+            <a
+              href={demoUrl}
+              className="btn-secondary"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`View ${title} project demo`}
+            >
+              <i className="fas fa-external-link-alt" aria-hidden="true"></i>
+              <span>Live Demo</span>
+            </a>
+          ) : (
+            <button 
+              className="btn-secondary"
+              onClick={handleImageClick}
+              aria-label={`View ${title} project details`}
+            >
+              <i className="fas fa-eye" aria-hidden="true"></i>
+              <span>View Details</span>
+            </button>
+          )}
         </div>
       </div>
     </article>
