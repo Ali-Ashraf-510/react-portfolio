@@ -53,7 +53,7 @@ const CertificateModal = ({ isOpen, modalData, onClose }) => {
   }, [onClose]);
 
   return (
-    <div className={`modal-backdrop ${isOpen ? 'show' : ''}`} onClick={handleOverlayClick}>
+    <div className={`modal-backdrop ${isOpen ? 'show' : ''}`} ref={modalRef}>
       <div className={`modal-dialog ${modalData?.type === 'project' ? 'modal-project' : ''} ${isImageZoomed ? 'image-zoomed' : ''}`} onClick={(e) => e.stopPropagation()} ref={modalRef}>
         <div className="modal-content glass-card">
           <div className="modal-header">

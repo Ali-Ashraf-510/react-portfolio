@@ -2031,9 +2031,7 @@ body::after {
   .project-modal-image.zoomed {
     transform: scale(1.2);
   }
-}
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-primary-lg);
+/* Removed stray lines: transform and box-shadow must be inside a selector block */
 }
 
 .certificate-actions .btn-secondary:hover::before {
